@@ -1,6 +1,7 @@
 package me.kafein.elitegenerator.util.item;
 
 import de.tr7zw.changeme.nbtapi.NBTItem;
+import me.kafein.elitegenerator.util.material.XMaterial;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -12,6 +13,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class ItemBuilder extends ItemStack {
 
@@ -25,9 +27,10 @@ public class ItemBuilder extends ItemStack {
         this.nbtItem = new NBTItem(itemStack);
     }
 
-    public ItemBuilder(final Material material, int amount, final int damage) {
-        if (amount <= 0) amount = 1;
-        this.itemStack = new ItemStack(material, amount, (byte) damage);
+    public ItemBuilder(final String materialName) {
+        final Optional<XMaterial> optionalXMaterial = XMaterial.matchXMaterial(materialName);
+        if (!optionalXMaterial.isPresent()) throw new NullPointerException("Material is not exists!");
+        this.itemStack = optionalXMaterial.get().parseItem();
         this.itemMeta = itemStack.getItemMeta();
         this.nbtItem = new NBTItem(itemStack);
     }

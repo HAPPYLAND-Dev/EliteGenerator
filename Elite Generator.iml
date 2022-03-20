@@ -9,6 +9,9 @@
       </configuration>
     </facet>
   </component>
+  <component name="McpModuleSettings">
+    <option name="srgType" value="SRG" />
+  </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -35,18 +38,21 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.30" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.MilkBowl:VaultAPI:1.7.1" level="project" />
-    <orderEntry type="library" name="Maven: de.tr7zw:item-nbt-api:2.8.0" level="project" />
+    <orderEntry type="library" name="Maven: de.tr7zw:item-nbt-api:2.9.2" level="project" />
     <orderEntry type="library" name="Maven: de.tr7zw:functional-annotations:0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.bgsoftware:SuperiorSkyblockAPI:1.8.4" level="project" />
-    <orderEntry type="library" name="Maven: com.songoda:skyblock:2.3.30" level="project" />
-    <orderEntry type="library" name="Maven: com.wasteofplastic:askyblock:3.0.9.4" level="project" />
-    <orderEntry type="library" name="Maven: world.bentobox:bentobox:1.20.0" level="project" />
-    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver:3.12.8" level="project" />
-    <orderEntry type="library" name="Maven: org.mongodb:bson:3.12.8" level="project" />
-    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:3.12.8" level="project" />
-    <orderEntry type="library" name="Maven: org.eclipse.jdt:org.eclipse.jdt.annotation:2.2.600" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.bgsoftware:SuperiorSkyblockAPI:1.8.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.songoda:skyblock:2.3.30" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.wasteofplastic:askyblock:3.0.9.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: world.bentobox:bentobox:1.20.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mongodb:mongodb-driver:3.12.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mongodb:bson:3.12.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mongodb:mongodb-driver-core:3.12.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.eclipse.jdt:org.eclipse.jdt.annotation:2.2.600" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: world.bentobox:level:2.8.1" level="project" />
-    <orderEntry type="library" name="Maven: com.iridium:IridiumSkyblock:3.2.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.iridium:IridiumSkyblock:3.2.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.gmail.filoghost.holographicdisplays:holographicdisplays-api:2.4.9" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.decentsoftware-eu:decentholograms:2.3.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.bstats:bstats-bukkit:3.0.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.bstats:bstats-base:3.0.0" level="project" />
   </component>
 </module>

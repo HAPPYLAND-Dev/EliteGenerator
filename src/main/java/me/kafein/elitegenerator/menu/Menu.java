@@ -10,6 +10,7 @@ import me.kafein.elitegenerator.menu.event.MenuClickEvent;
 import me.kafein.elitegenerator.menu.event.MenuCloseEvent;
 import me.kafein.elitegenerator.menu.event.MenuOpenEvent;
 import me.kafein.elitegenerator.util.item.ItemBuilder;
+import me.kafein.elitegenerator.util.material.XMaterial;
 import me.kafein.elitegenerator.util.placeholder.PlaceHolder;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -75,27 +76,14 @@ public abstract class Menu implements InventoryHolder, Listener {
 
         if (materialName.startsWith("HEAD: ")) {
 
-            Material material = Material.getMaterial("PLAYER_HEAD");
-
-            if (material == null) {
-
-                itemBuilder = new ItemBuilder(Material.getMaterial("SKULL_ITEM"), fileConfig.getInt(prefix + "amount"), 3);
-
-            } else {
-
-                itemBuilder = new ItemBuilder(material, fileConfig.getInt(prefix + "amount"), 0);
-
-            }
+            itemBuilder = new ItemBuilder("PLAYER_HEAD");
 
             final String skullOwner = materialName.split(": ")[1];
             itemBuilder.setSkullOwner(skullOwner.equalsIgnoreCase("%player%") ? playerName : skullOwner);
 
         } else {
 
-            itemBuilder = new ItemBuilder(
-                    Material.getMaterial(materialName),
-                    fileConfig.getInt(prefix + "amount"),
-                    fileConfig.getInt(prefix + "data"));
+            itemBuilder = new ItemBuilder(materialName);
 
         }
 
@@ -125,20 +113,13 @@ public abstract class Menu implements InventoryHolder, Listener {
     }
 
     public void fill(final Inventory inventory) {
-        final ItemBuilder itemBuilder;
-        Material material = Material.getMaterial("GRAY_STAINED_GLASS_PANE");
-        if (material == null) itemBuilder = new ItemBuilder(Material.getMaterial("STAINED_GLASS_PANE"), 1, 7);
-        else itemBuilder = new ItemBuilder(material, 1, 0);
+        final ItemStack itemStack = XMaterial.GRAY_STAINED_GLASS_PANE.parseItem();
         for (int i = 0; i < slot; i++)
-            if (inventory.getItem(i) == null) inventory.setItem(i, itemBuilder.toItemStack());
+            if (inventory.getItem(i) == null) inventory.setItem(i, itemStack);
     }
 
     public ItemStack getFillItem() {
-        final ItemBuilder itemBuilder;
-        Material material = Material.getMaterial("GRAY_STAINED_GLASS_PANE");
-        if (material == null) itemBuilder = new ItemBuilder(Material.getMaterial("STAINED_GLASS_PANE"), 1, 7);
-        else itemBuilder = new ItemBuilder(material, 1, 0);
-        return itemBuilder.toItemStack();
+        return XMaterial.GRAY_STAINED_GLASS_PANE.parseItem();
     }
 
     public void register(final Plugin plugin) {
