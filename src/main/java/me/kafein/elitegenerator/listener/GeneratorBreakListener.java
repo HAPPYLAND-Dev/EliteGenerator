@@ -17,6 +17,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
+import xyz.xenondevs.nova.api.event.tileentity.TileEntityBreakBlockEvent;
 
 import java.util.Random;
 
@@ -102,6 +103,18 @@ public class GeneratorBreakListener implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onBotBreak(MinerBlockBreakEvent e) {
+        if (!generatorManager.containsGeneratorLocation(e.getBlock().getLocation())) return;
+
+        final Generator generator = generatorManager.getGenerator(e.getBlock().getLocation());
+        final Location location = e.getBlock().getLocation();
+
+        Material material = oreGenManager.getOreGenForGenerator(generator).randomMaterial(random);
+        regenManager.addRegenGenerator(location, material);
+
+    }
+
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    public void onMinerBreak(TileEntityBreakBlockEvent e) {
         if (!generatorManager.containsGeneratorLocation(e.getBlock().getLocation())) return;
 
         final Generator generator = generatorManager.getGenerator(e.getBlock().getLocation());

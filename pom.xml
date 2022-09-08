@@ -88,6 +88,10 @@
             <id>iridiumdevelopment</id>
             <url>https://nexus.iridiumdevelopment.net/repository/maven-releases/</url>
         </repository>
+        <repository>
+            <id>xenondevs</id>
+            <url>https://repo.xenondevs.xyz/releases</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -181,6 +185,12 @@
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/libs/JetsMinions-7.6.6.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>xyz.xenondevs.nova</groupId>
+            <artifactId>Nova-API</artifactId>
+            <version>0.10</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
