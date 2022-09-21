@@ -61,6 +61,10 @@
 
     <repositories>
         <repository>
+            <id>xenondevs</id>
+            <url>https://repo.xenondevs.xyz/releases</url>
+        </repository>
+        <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
@@ -87,10 +91,6 @@
         <repository>
             <id>iridiumdevelopment</id>
             <url>https://nexus.iridiumdevelopment.net/repository/maven-releases/</url>
-        </repository>
-        <repository>
-            <id>xenondevs</id>
-            <url>https://repo.xenondevs.xyz/releases</url>
         </repository>
     </repositories>
 
@@ -188,9 +188,8 @@
         </dependency>
         <dependency>
             <groupId>xyz.xenondevs.nova</groupId>
-            <artifactId>Nova-API</artifactId>
-            <version>0.10</version>
-            <scope>provided</scope>
+            <artifactId>nova-api</artifactId>
+            <version>0.11.5</version>
         </dependency>
     </dependencies>
 </project>
