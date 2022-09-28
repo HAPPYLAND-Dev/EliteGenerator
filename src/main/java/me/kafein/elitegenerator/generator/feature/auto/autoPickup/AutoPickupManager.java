@@ -1,5 +1,6 @@
 package me.kafein.elitegenerator.generator.feature.auto.autoPickup;
 
+import me.kafein.elitegenerator.EliteGenerator;
 import me.kafein.elitegenerator.generator.feature.FeatureManager;
 import me.kafein.elitegenerator.generator.feature.auto.autoSmelt.AutoSmelt;
 import me.kafein.elitegenerator.generator.feature.auto.autoSmelt.AutoSmeltManager;
@@ -38,11 +39,10 @@ public class AutoPickupManager {
             if (autoSmelt != null) autoPickup.setDropItem(new ItemStack(autoSmelt.getTo()));
 
         }
-
         if (autoPickup.getInventory() == null)
             location.getWorld().dropItem(location.clone().add(0, 1, 0), autoPickup.getDropItem());
         else {
-            AdvancedChest advancedChest = AdvancedChestsAPI.getChestManager().getAdvancedChest(location);
+            AdvancedChest advancedChest = AdvancedChestsAPI.getChestManager().getAdvancedChest(autoPickup.getInventory().getLocation());
             if (advancedChest != null) {
                 advancedChest.getChestType().getDispenserService().dispenseItemToChest(advancedChest, autoPickup.getDropItem());
                 return;

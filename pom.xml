@@ -190,6 +190,7 @@
             <groupId>com.github.DeadSilenceIV</groupId>
             <artifactId>AdvancedChestsAPI</artifactId>
             <version>2.9-BETA</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>xyz.xenondevs.nova</groupId>
