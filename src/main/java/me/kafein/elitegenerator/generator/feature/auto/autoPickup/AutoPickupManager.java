@@ -6,6 +6,8 @@ import me.kafein.elitegenerator.generator.feature.auto.autoSmelt.AutoSmeltManage
 import org.bukkit.Location;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
+import us.lynuxcraft.deadsilenceiv.advancedchests.AdvancedChestsAPI;
+import us.lynuxcraft.deadsilenceiv.advancedchests.chest.AdvancedChest;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
@@ -40,6 +42,11 @@ public class AutoPickupManager {
         if (autoPickup.getInventory() == null)
             location.getWorld().dropItem(location.clone().add(0, 1, 0), autoPickup.getDropItem());
         else {
+            AdvancedChest advancedChest = AdvancedChestsAPI.getChestManager().getAdvancedChest(location);
+            if (advancedChest != null) {
+                advancedChest.getChestType().getDispenserService().dispenseItemToChest(advancedChest, autoPickup.getDropItem());
+                return;
+            }
             HashMap<Integer, ItemStack> items = autoPickup.getInventory().addItem(autoPickup.getDropItem());
             if (!items.isEmpty()) location.getWorld().dropItem(location.clone().add(0, 1, 0), autoPickup.getDropItem());
         }

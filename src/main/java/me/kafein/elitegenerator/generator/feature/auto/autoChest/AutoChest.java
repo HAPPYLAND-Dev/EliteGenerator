@@ -4,6 +4,10 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Chest;
 import org.bukkit.inventory.Inventory;
+import us.lynuxcraft.deadsilenceiv.advancedchests.AdvancedChests;
+import us.lynuxcraft.deadsilenceiv.advancedchests.AdvancedChestsAPI;
+import us.lynuxcraft.deadsilenceiv.advancedchests.AdvancedChestsExpansion;
+import us.lynuxcraft.deadsilenceiv.advancedchests.chest.AdvancedChest;
 
 public class AutoChest {
 
