@@ -77,8 +77,9 @@ public class IridiumSkyBlockHook extends SkyBlockHook {
         final Location location = e.getIsland().getCenter(getIslandWorld());
 
         if (!getGeneratorManager().containsGeneratorIslandLocation(location)) return;
-
-        for (UUID uuid : getGeneratorManager().getGenerators(location)) {
+        List<UUID> generators = getGeneratorManager().getGenerators(location);
+        if (generators == null) return;
+        for (UUID uuid : generators) {
 
             getGeneratorManager().deleteGenerator(uuid);
 
@@ -92,8 +93,9 @@ public class IridiumSkyBlockHook extends SkyBlockHook {
         final Location location = e.getIsland().getCenter(getIslandWorld());
 
         if (!getGeneratorManager().containsGeneratorIslandLocation(location)) return;
-
-        for (UUID uuid : getGeneratorManager().getGenerators(location)) {
+        List<UUID> generators = getGeneratorManager().getGenerators(location);
+        if (generators == null) return;
+        for (UUID uuid : generators) {
 
             getGeneratorManager().deleteGenerator(uuid);
 
@@ -107,8 +109,9 @@ public class IridiumSkyBlockHook extends SkyBlockHook {
         final Location location = e.getIsland().getCenter(getIslandWorld());
 
         if (!getGeneratorManager().containsGeneratorIslandLocation(location)) return;
-
-        for (UUID uuid : getGeneratorManager().getGenerators(location)) {
+        List<UUID> generators = getGeneratorManager().getGenerators(location);
+        if (generators == null) return;
+        for (UUID uuid : generators) {
 
             final Generator generator = getGeneratorManager().getGenerator(uuid);
             if (e.getNewRank() == IslandRank.OWNER) generator.changeOwnerUUID(e.getIsland().getOwner().getUuid());
@@ -126,8 +129,9 @@ public class IridiumSkyBlockHook extends SkyBlockHook {
         final Location location = getIslandCenterLocation(playerUUID);
 
         if (!getGeneratorManager().containsGeneratorIslandLocation(location)) return;
-
-        for (UUID uuid : getGeneratorManager().getGenerators(location)) {
+        List<UUID> generators = getGeneratorManager().getGenerators(location);
+        if (generators == null) return;
+        for (UUID uuid : generators) {
 
             final Generator generator = getGeneratorManager().getGenerator(uuid);
 
@@ -145,11 +149,11 @@ public class IridiumSkyBlockHook extends SkyBlockHook {
         final Location location = getIslandCenterLocation(playerUUID);
 
         if (!getGeneratorManager().containsGeneratorIslandLocation(location)) return;
-
-        for (UUID uuid : getGeneratorManager().getGenerators(location)) {
+        List<UUID> generators = getGeneratorManager().getGenerators(location);
+        if (generators == null) return;
+        for (UUID uuid : generators) {
 
             final Generator generator = getGeneratorManager().getGenerator(uuid);
-
             generator.removeGeneratorMember(playerUUID);
 
         }
